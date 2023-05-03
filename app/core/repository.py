@@ -82,6 +82,7 @@ class GenericBaseRepository(RepositoryInterface[T]):
         query = self.db.query(self.model).filter_by(id=id)
         obj = query.first()
         query.delete()
+        self.db.commit()
         return obj
 
     

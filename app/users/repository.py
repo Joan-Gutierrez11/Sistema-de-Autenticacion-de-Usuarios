@@ -1,8 +1,6 @@
 from fastapi_pagination import Params
 from fastapi_pagination.ext.sqlalchemy import paginate
 
-from security.psswd import get_hash_password
-
 from core.repository import GenericBaseRepository
 from users.models import User
 

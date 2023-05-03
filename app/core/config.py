@@ -7,7 +7,14 @@ class ProjectConfig(BaseSettings):
     DB_USER: str
     DB_PASS: str
     DB_DRIVER: str
-    DB_PORT:int = 3306 # MySQL Port default
+    DB_PORT: int = 3306 # MySQL Port default
+
+    JWT_SECRET: str = 'pass' # default secret by jwt tokens
+    JWT_EXP_TOKEN: int
+    JWT_EXP_REFRESH: int
+
+    STORAGE_URL: str = 'http://localhost:8000'
+    STORAGE_DIR: str = 'public'
 
     class Config:
         env_file = find_dotenv(filename='.env', usecwd=True)
